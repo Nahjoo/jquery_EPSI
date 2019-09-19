@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Jquery</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="btnradio" id="mrs" value="Monsieur">
+                    <label class="form-check-label" for="inlineRadio1">Monsieur</label>
+                </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="btnradio" id="mme" value="Madame">
+                    <label class="form-check-label" for="inlineRadio2">Madame</label>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nom</label>
+                  <input type="text" class="form-control" id="lastname" placeholder="Nom" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Prénom</label>
+                  <input type="text" class="form-control" id="firstname" placeholder="prénom" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Âge</label>
+                    <input type="number" class="form-control" id="age" placeholder="age" min="0" required>
+                    <div id="AgeVerification"></div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Pseudo</label>
+                    <input type="text" class="form-control" id="pseudo" placeholder="pseudo" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                    <div id="PasswordVerif"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+    <div id="summary"></div>
+</body>
+</html>
