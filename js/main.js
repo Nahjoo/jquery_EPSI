@@ -10,10 +10,10 @@ function VerificationAge() { // verify if you are Majeur or mineur
         if($(this).val() == 0){
             $("#AgeVerification").text("");
         }else if($(this).val() < 18){
-            $("#AgeVerification").text("Mineur").animate({fontSize: '1em'}, "slow");
+            $("#AgeVerification").text("Vous êtes Mineur").animate({fontSize: '1em'}, "slow");
             $("#AgeVerification").addClass("text-warning");
         }else if($(this).val() >= 18) {
-            $("#AgeVerification").text("Majeur").animate({fontSize: '3em'}, "slow");
+            $("#AgeVerification").text("Vous êtes Majeur").animate({fontSize: '3em'}, "slow");
             $("#AgeVerification").removeClass().addClass("text-success");
         }
     })
@@ -35,7 +35,7 @@ function VerifPassword(){ // verify if you password equal to confirm Password
         }else {
             $("#PasswordVerif").text("");
         }
-    });
+    });  
 }
 $("button").click(function(e){ // when click on the button submit , verify if input is not empty and post below the formulaire the seizure of user
     var lastname = $("#lastname").val();
@@ -51,7 +51,7 @@ $("button").click(function(e){ // when click on the button submit , verify if in
     }else {
         event.preventDefault();
         $(".hide").hide("slow");
-        $(".show").removeClass("d-none");
+        $(".show").removeClass("d-none")
         $("#summary").html(btnradio +"<br />"+ lastname + " " + firstname + "<br /> Age :" + age + $("#AgeVerification").text() + "<br /> Pseudo : " + pseudo + "<br />  Mot de passe : " + password);
     }
 })

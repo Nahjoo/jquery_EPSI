@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="js/jquery.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js" defer></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Jquery</title>
 </head>
@@ -13,46 +14,59 @@
     <div class="card container hide">
         <div class="card-body">
             <h1 class="text-center" >Formulaire de renseignement</h1>
-            <form>
+
+            <form id="#myform">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="btnradio" id="mrs" value="Monsieur">
                     <label class="form-check-label" for="inlineRadio1">Monsieur</label>
                 </div>
-                    <div class="form-check form-check-inline">
+
+                <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="btnradio" id="mme" value="Madame">
                     <label class="form-check-label" for="inlineRadio2">Madame</label>
                 </div>
+
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nom</label>
-                  <input type="text" class="form-control" id="lastname" placeholder="Nom" required>
+                  <input type="text" class="form-control" id="lastname" maxlength="30" placeholder="Nom" required>
                 </div>
+
                 <div class="form-group">
                   <label for="exampleInputPassword1">Prénom</label>
-                  <input type="text" class="form-control" id="firstname" placeholder="prénom" required>
+                  <input type="text" class="form-control" id="firstname" maxlength="30" placeholder="prénom" required>
                 </div>
+
                 <div class="form-group">
                     <label for="exampleInputPassword1">Âge</label>
-                    <input type="number" class="form-control" id="age" placeholder="age" min="0" required>
+                    <input type="number" class="form-control" id="age" maxlength="3" placeholder="age" min="0"
+                        required>
                     <div id="AgeVerification"></div>
                 </div>
+
                 <div class="form-group">
                     <label for="exampleInputPassword1">Pseudo</label>
-                    <input type="text" class="form-control" id="pseudo" placeholder="pseudo" required>
+                    <input type="text" class="form-control" id="pseudo" maxlength="30" placeholder="pseudo" required>
                 </div>
+
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    <input type="password" class="form-control" id="password" minlength="4" maxlength="15" placeholder="Password"
+                        required>
                 </div>
+
                 <div class="form-group">
                     <label for="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                    <input type="password" class="form-control" id="confirmPassword" minlength="4" maxlength="15" placeholder="Confirm Password" required>
                     <div id="PasswordVerif"></div>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+
             <div id="warning"></div>
         </div>
     </div>
+
     <div class="card container show d-none" style="width: 18rem;">
         <label for="">Fiche récapitulative</label>
         <div class="card-body">
