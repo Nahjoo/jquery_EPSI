@@ -10,7 +10,7 @@
     <title>Jquery</title>
 </head>
 <body>
-    <div class="card">
+    <div class="card container hide">
         <div class="card-body">
             <form>
                 <div class="form-check form-check-inline">
@@ -52,6 +52,11 @@
 
         </div>
     </div>
-    <div id="summary"></div>
+    <div class="card container show" style="width: 18rem;">
+        <label for="">Fiche récapitulative</label>
+        <div class="card-body">
+            <p class="card-text" id="summary"></p>
+        </div>
+    </div>
 </body>
 </html>

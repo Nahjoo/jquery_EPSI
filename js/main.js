@@ -1,8 +1,9 @@
 $( document ).ready(function() { // loading page, fadeIn the formulaire and call function
     VerificationAge();
     VerifPassword();
-    $(".card").hide();
-    $(".card").fadeIn("slow");
+    $(".hide").hide();
+    $(".show").hide();
+    $(".hide").fadeIn(3000);
 })
 
 function VerificationAge() { // verify if you are Majeur or mineur
@@ -53,6 +54,8 @@ $("button").click(function(e){ // when click on the button submit , verify if in
         event.preventDefault();
     }else {
         event.preventDefault();
+        $(".hide").hide("slow");
+        $(".show").show("slow");
         $("#summary").html(btnradio +"<br />"+ lastname + " " + firstname + "<br /> Age :" + age + $("#AgeVerification").text() + "<br /> Pseudo : " + pseudo + "<br />  Mot de passe : " + password);
     }
 })
