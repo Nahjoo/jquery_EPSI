@@ -2,7 +2,6 @@ $( document ).ready(function() { // loading page, fadeIn the formulaire and call
     VerificationAge();
     VerifPassword();
     $(".hide").hide();
-    $(".show").hide();
     $(".hide").fadeIn(3000);
 })
 
@@ -11,14 +10,11 @@ function VerificationAge() { // verify if you are Majeur or mineur
         if($(this).val() == 0){
             $("#AgeVerification").text("");
         }else if($(this).val() < 18){
-            $("#AgeVerification").text("Mineur");
-            $("#AgeVerification").animate({fontSize: '1em'}, "slow");
+            $("#AgeVerification").text("Mineur").animate({fontSize: '1em'}, "slow");
             $("#AgeVerification").addClass("text-warning");
         }else if($(this).val() >= 18) {
-            $("#AgeVerification").text("Majeur");
-            $("#AgeVerification").animate({fontSize: '3em'}, "slow");
-            $("#AgeVerification").removeClass();
-            $("#AgeVerification").addClass("text-success");
+            $("#AgeVerification").text("Majeur").animate({fontSize: '3em'}, "slow");
+            $("#AgeVerification").removeClass().addClass("text-success");
         }
     })
 }
@@ -50,12 +46,12 @@ $("button").click(function(e){ // when click on the button submit , verify if in
     var age = $("#age").val();
 
     if(lastname == "" || firstname == "" || pseudo == "" || password == "" || btnradio == undefined || $("#PasswordVerif").text() != ""){
-        $("#summary").html("Veuillez remplir tout les champs");
+        $("#warning").html("Veuillez remplir tout les champs");
         event.preventDefault();
     }else {
         event.preventDefault();
         $(".hide").hide("slow");
-        $(".show").show("slow");
+        $(".show").removeClass("d-none");
         $("#summary").html(btnradio +"<br />"+ lastname + " " + firstname + "<br /> Age :" + age + $("#AgeVerification").text() + "<br /> Pseudo : " + pseudo + "<br />  Mot de passe : " + password);
     }
 })
